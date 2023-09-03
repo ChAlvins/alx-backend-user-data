@@ -36,7 +36,7 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     db_connect = mysql.connector.connect(user=user,
                                          password=password,
                                          host=host,
-                                         database=db_name)
+                                         database=database)
     return db_connect
 
 

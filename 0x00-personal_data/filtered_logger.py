@@ -27,7 +27,7 @@ class RedactingFormatter(logging.Formatter):
                             super().format(record), self.SEPARATOR)
 
 
-def get_db() -> mysql.connector.connection.MYSQLConnection:
+def get_db() -> mysql.connector.connection.MySQLConnection:
     """Connection to MySQL environment """
     user=os.getenv('PERSONAL_DATA_DB_USERNAME', 'root')
     password=os.getenv('PERSONAL_DATA_DB_PASSWORD', '')

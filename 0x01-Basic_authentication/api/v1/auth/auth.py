@@ -18,7 +18,7 @@ class Auth:
         Placeholder method for retrieving authorization header.
         Returns None for now
         """
-        return False
+        return None
 
     def current_user(self, request=None) -> TypeVar('User'):
         """

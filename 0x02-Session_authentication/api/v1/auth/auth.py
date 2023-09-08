@@ -2,6 +2,7 @@
 """class Auth """
 from flask import request
 from typing import List, TypeVar
+import os
 
 
 class Auth:
@@ -45,3 +46,16 @@ class Auth:
         Returns None for now.
         """
         return None
+
+    def session_cookie(self, request=None):
+        """
+        returns a cookie value from a request
+        :param request: Flask request object
+        :return: Value of the session cookie, or None if not found
+        method retrieves name of the session cookie from the environment
+        variable SESSION_NAME. By default, it's set to "_my_session_id"
+        """
+        if request is None:
+            return None
+        session_name = os.getenv("SESSION_NAME", "_my_session_id")
+        return request.cookies.get(session_name)
